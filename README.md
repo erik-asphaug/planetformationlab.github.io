@@ -1,4 +1,3 @@
-# planetformationlab.github.io
 # Planet Formation Lab Website Manager
 
 Welcome to the lab repository! This repository hosts our public website at [planetformationlab.org](https://planetformationlab.org). 
