@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Formation Laboratory</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --accent: #d4af37;
+            --card-bg: #ffffff;
+            --border-color: #eaeaea;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 2rem 1rem; }
+        .container { max-width: 950px; margin: 0 auto; }
+
+        header { display: flex; align-items: center; gap: 2rem; border-bottom: 2px solid var(--text-main); padding-bottom: 2rem; margin-bottom: 3rem; }
+        .logo-wrapper { border: 4px solid var(--text-main); padding: 4px; background: #000; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .logo-img { width: 140px; height: 140px; object-fit: cover; }
+        .title-area h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 500; line-height: 1.1; }
+
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 500; margin-bottom: 1.25rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border-color); }
+        section { margin-bottom: 3.5rem; }
+
+        /* Grid Framework for Custom Sections */
+        .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.25rem; }
+        
+        /* Virtual Rooms Grid Configuration */
+        .grid-rooms { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+        .room-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 1.25rem; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
+        .room-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-color: var(--accent); }
+        .room-card h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .room-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* Media / News Styling */
+        .news-item { border-left: 3px solid var(--accent); padding-left: 1rem; margin-bottom: 1.25rem; }
+        .news-tag { font-size: 0.75rem; text-transform: uppercase; font-weight: 600; color: var(--accent); letter-spacing: 0.5px; }
+
+        ul { list-style: none; }
+        li { margin-bottom: 0.75rem; }
+        .item-link { color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+        .item-link:hover { color: var(--accent); }
+        .meta { font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.1rem; }
+
+        /* Calendar Wrapper Integration */
+        .calendar-wrapper { position: relative; padding-bottom: 60%; height: 0; overflow: hidden; border: 1px solid var(--border-color); border-radius: 6px; }
+        .calendar-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        footer { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-muted); text-align: center; }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; gap: 1rem; }
+            .title-area h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="logo-wrapper">
+                <img src="https://physicsworld.com" alt="Planet Formation Lab Logo" class="logo-img">
+            </div>
+            <div class="title-area">
+                <h1>Planet Formation<br>Laboratory</h1>
+            </div>
+        </header>
+
+        <main>
+            <!-- Protected Meeting Infrastructure Workspace -->
+            <section>
+                <h2>Virtual Rooms</h2>
+                <div class="grid-rooms">
+                    <a href="https://zoom.us" target="_blank" class="room-card">
+                        <h3>Zoom Room</h3>
+                        <p>Join regular lab meetings and seminars. Password required.</p>
+                    </a>
+                    <a href="https://microsoft.com" target="_blank" class="room-card">
+                        <h3>Teams Room</h3>
+                        <p>Collaborative project space and workshops.</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Automatic / Press News Feed -->
+            <section>
+                <h2>Lab News & Media Coverage</h2>
+                <div class="news-item">
+                    <span class="news-tag">The New York Times</span>
+                    <h3><a href="https://www.nytimes.com/2026/07/09/science/china-photo-quasi-moon.html" class="item-link" target="_blank">In Deep Space, China Meets Earth's 'Amazing' Quasi-Moon</a></h3>
+                    <p class="meta">July 9, 2026 — Dr. Sabina Răducan comments on the upcoming challenging sampling mechanics of the Tianwen-2 asteroid mission.</p>
+                </div>
+                <div class="news-item">
+                    <span class="news-tag">The New York Times</span>
+                    <h3><a href="https://www.nytimes.com/2026/07/07/science/torifune-asteroid-contact-binary.html" class="item-link" target="_blank">Cosmic Conjoined Twins, Caught on Camera</a></h3>
+                    <p class="meta">July 7, 2026 — Dr. Sabina Răducan evaluates structural risks and defense kinetic impact profiles when deflecting two-lobed contact binary asteroids.</p>
+                </div>
+            </section>
+
+            <!-- Multi-Dimensional Scientific Fields Mapping -->
+            <section>
+                <h2>Ongoing Research Projects</h2>
+                <div class="content-grid">
+                    <div class="card">
+                        <h3>Kinetic Asteroid Deflection Dynamics</h3>
+                        <p class="meta">Project Lead: Dr. Sabina Răducan</p>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted);">Numerical simulation profiles plotting post-impact disruption fields and the evolutionary mechanics of low-gravity rubble-pile systems.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Giant Impact Disks Accretion</h3>
+                        <p class="meta">Project Lead: Dr. Alex Mercer</p>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted);">Modeling mass transfer variables and thermodynamics across early-stage structural contact zones within forming planetary disks.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Directory and Roster Grid Split -->
+            <div class="content-grid" style="margin-bottom: 3.5rem;">
+                <section style="margin-bottom: 0;">
+                    <h2>Recent Papers</h2>
+                    <ul>
+                        <li>
+                            <a href="#" class="item-link">Modeling Giant Impact Dynamics in Protoplanetary Disks</a>
+                            <span class="meta">Astrophysical Journal (2026)</span>
+                        </li>
+                        <li>
+                            <a href="#" class="item-link">Accretion Thresholds of Planetary Embryos</a>
+                            <span class="meta">Letters in Earth and Planetary Sciences (2025)</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section style="margin-bottom: 0;">
+                    <h2>People</h2>
+                    <ul>
+                        <li><strong>Dr. Alex Mercer</strong> — Principal Investigator</li>
+                        <li><strong>Dr. Sabina Răducan</strong> — Science Programme Lead</li>
+                        <li><strong>Sam Jenkins</strong> — Graduate Research Assistant</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Lab Sync Calendar Module -->
+            <section>
+                <h2>Lab Schedule & Presentations</h2>
+                <div class="calendar-wrapper">
+                    <!-- Swap your calendar ID hash directly into the src parameter below -->
+                    <iframe src="https://google.com" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Planet Formation Laboratory. Internal edits restricted to authorized repository contributors.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
